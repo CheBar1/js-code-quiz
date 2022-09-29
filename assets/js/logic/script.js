@@ -21,26 +21,9 @@ HTML
 // var acceptingAnswers = true;
 // var score = 0
 // var questionCounter = 0;
-// var availableQuestions = [];
 
-// var questions = [
-//     {
-//         question: "Commonly used data types DO NOT include:",
-//         choice1: "strings",
-//         choice2: "booleans",
-//         choice3: "alerts",
-//         choice4: "numbers",
-//         correctAnswer: 3 // index - alerts
-//     },
-//     {
-//         question: "The condition in an if/else statement is enclosed within ____."
-//         choice1: "quotes" 
-//         choice2: "curly brackets"
-//         choice3: "parenthesis"
-//         choice4: "square brackets"
-//         correctAnswer: 3 // index - parenthesis
-//     }
-// ]
+
+
 
 var timerText = document.getElementById('timer-text');
 var startButton = document.getElementById('start-quiz');
@@ -57,8 +40,14 @@ function startTimer() {
         } else if (timeLeft === 1) {
             timerText.textContent = 'Times UP!';
             clearInterval(timeInterval);
+// If incorrect answer is selected the time left is reduced by 15 seconds
+        } else if (!correctAnswer) {
+            secondsLeft = secondsLeft - 15
         }
+
   }, 1000);
+
+      
 }
 
 startButton.addEventListener("click", startTimer) 
