@@ -12,7 +12,7 @@ The following images show the web application's appearance and functionality:
 ![ScreenShot](./assets/images/Coding%20Quiz%20Challenge.png)
 
 ## Link to deployed application
-
+ https://chebar1.github.io/js-code-quiz/
 
 ## License
 Please refer to the LICENSE in the repo.
