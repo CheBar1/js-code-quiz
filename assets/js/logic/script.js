@@ -1,33 +1,11 @@
-/* Create an oject with question, choices, and correct answer
-HTML
-<div id="questions" class="hide">
-  <h2 id="question-title"></h2>
-  <div id="choices" class="choices"></div> */
-
-// When start button selected timer and quiz start and question presents
-
-// When question is answered and other question is presented
-
-// When question is answered incorrectly 15 seconds is subtracted from the clock
-
-// When all questions answered or the timer reaches 0 - the game is over
-
-//When the game is over I can save my intials and my score
-
-// var question = document.getElementById("question-title");
-// var choices = Array.from(document.getElementById("choices"));
-
-// var currentQuestion = {};
-// var acceptingAnswers = true;
-// var score = 0
-// var questionCounter = 0;
-
-
-
-
 var timerText = document.getElementById('timer-text');
 var startButton = document.getElementById('start-quiz');
 var secondsLeft = 75;
+var currentQuestionIndex = 0;
+var startScreen = document.getElementById('start-screen');
+var questionScreen = document.getElementById('question-screen');
+var questionTitle = document.getElementById('question-title');
+var choicesContainer = document.getElementById('choices');
 
 // When start quiz button selected the timer starts to count down from 75 seconds
 function startTimer() {
@@ -46,9 +24,36 @@ function startTimer() {
         }
 
   }, 1000);
-
-      
+    
 }
 
-startButton.addEventListener("click", startTimer) 
+startButton.addEventListener("click", startQuiz) 
+
+// When the start quiz button is selected the start screen page is hidden and the first question and choices display
+
+function startQuiz() {
+        startTimer()
+        startScreen.classList.add("hide");
+        questionScreen.classList.remove("hide");
+        displayQuestion()
+}
+
+function displayQuestion() {
+        questionTitle.textContent = questions[currentQuestionIndex].question;
+        for (let index = 0; index < questions[currentQuestionIndex].choices.length; index++) {
+          const answerChoice = questions[currentQuestionIndex].choices[index];
+        var answerButton = document.createElement("button")
+        answerButton.textContent = answerChoice;
+        choicesContainer.append(answerButton);
+        }
+}
+
+// When question is answered and other question is presented
+
+// When question is answered incorrectly 15 seconds is subtracted from the clock
+
+// When all questions answered or the timer reaches 0 - the game is over
+
+// When the game is over I can save my intials and my score
+ 
  

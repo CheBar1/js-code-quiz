@@ -1,14 +1,12 @@
 var questions = [
     {
-        question: "Commonly used data types DO NOT include:",
-        choice1: "strings",
-        choice2: "booleans",
-        choice3: "alerts",
-        choice4: "numbers",
-        correctAnswer: 3 // index - alerts
-    },
-
-    console.log("questions");
+        question: "Commonly used data types DO NOT include:", 
+        choices: ["strings","booleans","alerts","numbers"],
+        correctAnswer:2
+    }
+]
+     
+// Following questions and choices will eventually be coded as above:   
 //     {
 //         question: "The condition in an if/else statement is enclosed within ____.",
 //         choice1: "quotes", 
