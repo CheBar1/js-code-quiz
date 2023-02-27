@@ -33,6 +33,7 @@ function startQuiz() {
 
 function displayQuestion() {
         questionTitle.textContent = questions[currentQuestionIndex].question;
+        choicesContainer.innerHTML='';
         for (let index = 0; index < questions[currentQuestionIndex].choices.length; index++) {
           const answerChoice = questions[currentQuestionIndex].choices[index];
         var answerButton = document.createElement("button")
@@ -51,6 +52,7 @@ function checkAnswer(event) {
                 timerText.textContent = secondsLeft;
                 if (secondsLeft <= 0) {
                         secondsLeft = 0
+                        timerText.textContent = secondsLeft;
                         endQuiz()
                 }
         } else {
@@ -61,6 +63,7 @@ function checkAnswer(event) {
                 endQuiz()
         } else {
                 displayQuestion()
+
         }
 }
 
@@ -70,12 +73,10 @@ function endQuiz() {
         endScreen.classList.remove("hide");
 }
 
-        // When question is answered and other question is presented
+ 
 
 
-
-// When all questions answered or the timer reaches 0 - the game is over
-
-// When the game is over I can save my intials and my score
+ 
+ 
  
  
